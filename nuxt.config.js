@@ -17,6 +17,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -34,10 +35,52 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/auth-next'
   ],
 
+  auth: {
+    strategies: {
+      'laravelJWT': {
+        provider: 'laravel/jwt',
+        url: 'http://127.0.0.1:8000/api',
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: false
+          },
+          logout: {
+            url: '/auth/logout',
+            method: 'post',
+            propertyName: false
+          },
+          refresh: {
+            url: '/auth/refresh',
+            method: 'post',
+            propertyName: false
+          },
+          user: {
+            url: '/auth/user',
+            method: 'get',
+            propertyName: false
+          }
+        },
+        token: {
+          property: 'access_token',
+          maxAge: 60 * 60
+        },
+        refreshToken: {
+          maxAge: 20160 * 60
+        },
+      },
+    }
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://127.0.0.1:8000'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
