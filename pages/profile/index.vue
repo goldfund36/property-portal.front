@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>My profile {{ $store.$auth.user.name }}</h1>
+    <h1>My profile {{ $auth.user.name }}</h1>
   </section>
 
 </template>

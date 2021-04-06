@@ -8,14 +8,15 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <nuxt-link to="/" class="nav-link" exact active-class="active">Home</nuxt-link>
+
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown right v-if="$store.$auth.loggedIn">
+          <b-nav-item-dropdown right v-if="isAuthenticated">
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>{{ $store.$auth.user.name }}</em>
+              <em>{{ loggedInUser.name }}</em>
             </template>
             <nuxt-link to="/profile" class="dropdown-item">Profile</nuxt-link>
             <b-dropdown-item href="#" @click.prevent="logout">Sign Out</b-dropdown-item>
@@ -31,12 +32,21 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: "Navbar",
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedInUser'])
+  },
   methods: {
     logout() {
       this.$auth.logout().then(() => {
-        window.location.href = '/';
+        this.$router.push({ path: '/' })
       })
     }
   }
