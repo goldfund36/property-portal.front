@@ -1,6 +1,9 @@
 <template>
 <div>
-  <h2 class="text-center mb-4">Best property in Alanya</h2>
+  <div class="sec-title">
+    <span class="title">FIND NOW YOUR DREAM HOUSE</span>
+    <h2>New Property</h2>
+  </div>
   <property-card/>
 </div>
 </template>
@@ -16,5 +19,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
