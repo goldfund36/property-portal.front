@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TopBanner/>
     <navbar/>
     <div class="container pt-5">
        <Nuxt />
@@ -9,8 +10,12 @@
 
 <script>
 import Navbar from "../components/Navbar";
+import TopBanner from "../components/TopBanner";
 export default {
-  components: {Navbar}
+  components: {
+    Navbar,
+    TopBanner
+  }
 }
 </script>
 <style>

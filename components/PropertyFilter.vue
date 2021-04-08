@@ -5,7 +5,7 @@
         <multiselect v-model="operation" :options="operations"  placeholder="Buy or sell?"></multiselect>
       </div>
       <div class="col-md-4 col-12 mb-1 p-xs-0">
-        <multiselect v-model="type" :options="types" :multiple="true" :limit="2" placeholder="Property type" label="ru_name" track-by="ru_name">
+        <multiselect v-model="type" :options="types" :multiple="true" :limit="2" placeholder="Property type" label="en_name" track-by="en_name">
         </multiselect>
 
       </div>
@@ -96,7 +96,7 @@ export default {
       })
     },
     getResultValue(result) {
-      return result.ru_name;
+      return result.en_name;
     },
   }
 }
@@ -110,12 +110,6 @@ export default {
 }
 .multiselect__tags {
   border: 1px solid #00a75e;
-}
-.filter-container {
-  border: 1px solid #00a75e;
-  padding: 15px 10px 11px 20px;
-  border-radius: 7px;
-  margin-bottom: 25px;
 }
 .price-window-text {
   color: #00a75e;

@@ -18,8 +18,8 @@
               <b-dropdown-item href="#" @click.prevent="logout">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-button-group v-else>
-              <nuxt-link to="/login" class="mr-2 log-link">Login</nuxt-link>
-              <nuxt-link to="/register"class="log-link">Register</nuxt-link>
+              <nuxt-link to="/login" class="mr-2 log-link">Login <i class="la la-sign-in"></i></nuxt-link>
+              <nuxt-link to="/register"class="log-link">Register <i class="la la-user"></i></nuxt-link>
             </b-button-group>
           </b-navbar-nav>
         </b-collapse>
@@ -78,16 +78,34 @@ export default {
   font-size: 17px;
   letter-spacing: 0.6px;
   border: 1px solid #fff;
-  padding: 5px 14px;
-  border-radius: 7px;
+  padding: 2px 10px;
+  line-height: 25px;
 }
 .log-link:hover {
-  color: #fff;
+  color: #222222;
   text-decoration: none;
+  transition: all 600ms ease;
+  border: 1px solid #222222;
 }
 .navbar-brand {
   font-weight: bold;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+}
+.navbar-light {
+  background: #fff !important;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba(0, 150, 200, 1) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 150, 200, 0.8) !important;
 }
 </style>

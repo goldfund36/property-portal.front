@@ -23,6 +23,8 @@ export default {
   css: [
     '@trevoreyre/autocomplete-vue/dist/style.css',
     'vue-multiselect/dist/vue-multiselect.min.css',
+    '~/assets/css/flaticon.css',
+    '~/assets/css/line-awesome.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
